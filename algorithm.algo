@@ -1,0 +1,32 @@
+ALGORITHM READ_A_SENTENCE
+VAR
+    sentence := STRING;
+    l_sentence, nb_words, nb_vowel, i := INTEGER;
+    vowel : CHAR := [i, u, o, a, e, I, U, O, A, E];
+    
+BEGIN
+    Write(enter a sentence that ends with a dot);
+    Read(sentence);
+
+    l_sentence := sentence.Length;
+    
+    FOR i FROM 0 TO l_sentence - 1  DO
+        IF (sentence[i] = '.') THEN
+            l_sentence + 1;
+        END_IF
+            Write('the Length used in this sentence is :', l_sentence);
+
+        SWITCH (sentence[i]) DO
+            case ' ' : nb_words + 1;
+            case 'i' : nb_vowel + 1;
+            case 'u' : nb_vowel + 1;
+            case '0' : nb_vowel + 1;
+            case 'a' : nb_vowel + 1;
+            case 'e' : nb_vowel + 1; BREAK;
+            default : Write('not vowel'); BREAK;
+        END_SWITCH
+
+    END_FOR
+    Write('you have ', ' ', nb_words, 'words in your sentence.');
+    Write('you have ', ' ', nb_vowel, 'vowel in your sentence.');
+END
